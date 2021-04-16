@@ -15,7 +15,7 @@ SYSRULES = {"F": "F[+F]F[-F][F]"}
 iterationNr = 4  # Amount of times, that rule replacement
 stepSize = 15  # Amount of pixels the turtle takes with each step
 initialHeading = 90  # Initial angle, in which the turtle is 'looking'. 0 - straight up, 90 - to the right
-initialPos = (0, 0)  # Initial position on the plane, (0,0) corresponds to the middle of the field
+initialPos = (0, -180)  # Initial position on the plane, (0,0) corresponds to the middle of the field
 
 # pen and background color as hex rgb values, pen size in pixels
 penclr = "#000000"
