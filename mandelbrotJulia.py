@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # Constants
 # Number of iterations used to check, whether the sequence is bounded
-MAX_ITER = 25
+MAX_ITER = 50
 # Size of the image created. Complexity is strongly determined both by size and MAX_ITER
 WIDTH = 400
 HEIGHT = 400
@@ -53,13 +53,13 @@ def mandelbrot(c: complex, thresh: int = 2) -> int:
 
 # Returns a (WIDTH x HEIGHT) Array of integers in range of (1...MAX_ITER)
 # The higher the value, the later does the julia series for constant c at position z0 diverge
-def drawJulia(c):
+def draw_julia(c):
     img = np.zeros((WIDTH, HEIGHT))
     for x in range(0, WIDTH):
         for y in range(0, HEIGHT):
             # Convert pixel coordinate to complex number
             z = complex(RE_START + (x / WIDTH) * (RE_END - RE_START),
-                         IM_START + (y / HEIGHT) * (IM_END - IM_START))
+                        IM_START + (y / HEIGHT) * (IM_END - IM_START))
 
             img[y][x] = julia(c, z)
     return img
@@ -67,7 +67,7 @@ def drawJulia(c):
 
 # Returns a (WIDTH x HEIGHT) Array of integers in range of (1...MAX_ITER)
 # The higher the value, the later does the mandelbrot sequence for the point diverge
-def drawMandelbrot():
+def draw_mandelbrot():
     img = np.full((WIDTH, HEIGHT), 0)
     for x in range(WIDTH):
         for y in range(HEIGHT):
@@ -79,7 +79,7 @@ def drawMandelbrot():
 
 
 def main():
-    img = drawMandelbrot()
+    img = draw_mandelbrot()
     # img = drawJulia(juliaConstant)
     plt.imshow(img, cmap=colorMap)
     plt.show()
